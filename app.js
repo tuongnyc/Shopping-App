@@ -38,7 +38,7 @@ const MONGODB_URI =
 `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-krvu5.mongodb.net/${process.env.MONGO_DEFAULT_DB}`
 
 const store = new mongodbConnectSession({
-    uri: MONGODB_URI, //'mongodb+srv://shopapp:shopapp@cluster0-krvu5.mongodb.net/test?retryWrites=true&w=majority',
+    uri: MONGODB_URI, 
     collection: 'sessions'
 });
 
@@ -145,7 +145,6 @@ mongoConnect(() => {
 }) */
 
 // mongoose connect. return a promise!
-//mongoose.connect('mongodb+srv://shopapp:shopapp@cluster0-krvu5.mongodb.net/shop?retryWrites=true&w=majority')
 mongoose.connect(MONGODB_URI)
 .then(result => {
 /*    User.findOne().then(user => {
