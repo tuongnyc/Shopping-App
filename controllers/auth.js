@@ -34,7 +34,7 @@ const { validationResult } = require('express-validator');   // use the subpacka
 
 const transporter = nodemailer.createTransport(sendgridTransport({
     auth: {
-        api_key: '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'
+        api_key: `${process.env.SEND_GRID_API}`
     }
 }));
 
