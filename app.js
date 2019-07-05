@@ -83,7 +83,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images',express.static(path.join(__dirname, 'images')));
 
 app.use(  // setting up a session.
-    session({secret: 'my secret', resave: false, saveUninitialized: false, store: store})
+    session({secret: `${process.env.SECRET_KEY}`, resave: false, saveUninitialized: false, store: store})
 );  
 
 app.use(flash());  // register flash to use through out express!
