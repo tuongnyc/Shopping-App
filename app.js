@@ -112,6 +112,7 @@ app.use((req, res, next) => {
 })
 
 // disable csrf token! By using it it before csrfProtection call!.
+// has to put it in app.js because csrf does not work with stripe package!
 app.post('/create-order', isAuth, shopController.postOrder) 
 
 app.use(csrfProtection);  // csurf is enable.  Now, added to the views.
@@ -137,7 +138,6 @@ app.use((error, req, res, next) => {
     console.log('Error: app.js ', error);
     res.redirect('/500');
 }) 
-
 
 /*
 mongoConnect(() => {
